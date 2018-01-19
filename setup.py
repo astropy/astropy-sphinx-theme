@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-from astropy_sphinx_theme import __version__
+from sphinx_astropy_theme import __version__
 
 setup(
     name="sphinx-astropy-theme",
