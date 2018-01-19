@@ -1,10 +1,7 @@
 # astropy-sphinx-theme
-The Astopy project documentation theme
 
-To use:
+This is the default Astopy project documentation theme. To use this theme, simply add the following line to your documentation's ``conf.py`` file:
 
 ```python
-import astropy_sphinx_theme
-html_theme_path = astropy_sphinx_theme.get_html_theme_path()
 html_theme = 'bootstrap-astropy'
 ```
