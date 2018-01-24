@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
-from sphinx_astropy_theme import __version__
+from astropy_sphinx_theme import __version__
 
 setup(
-    name="sphinx-astropy-theme",
+    name="astropy-sphinx-theme",
     version=__version__,
     use_2to3=False,
     description="The sphinx theme for Astropy.",
@@ -11,10 +11,10 @@ setup(
     author="The Astropy Developers",
     author_email="astropy.team@gmail.com",
     install_requires=["setuptools"],
-    packages=['sphinx_astropy_theme'],
+    packages=['astropy_sphinx_theme'],
     include_package_data=True,
     entry_points = {
         'sphinx.html_themes': [
-            'bootstrap-astropy = sphinx_astropy_theme',
+            'bootstrap-astropy = astropy_sphinx_theme',
         ]
     },)
