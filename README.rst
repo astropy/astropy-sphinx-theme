@@ -21,3 +21,6 @@ of Sphinx, you will need to do:
 ``bootstrap-astropy`` is the only theme that is currently available, but
 the structure of the package allows more themes to be added in future if
 needed.
+
+.. image:: https://circleci.com/gh/astropy/astropy-sphinx-theme/tree/master.svg?style=svg
+    :target: https://circleci.com/gh/astropy/astropy-sphinx-theme/tree/master 
