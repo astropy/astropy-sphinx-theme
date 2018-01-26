@@ -18,3 +18,7 @@ jobs:
           command: |
             pip install .
             pytest astropy_sphinx_theme
+      - run:
+          name: Check setup.py metadata
+          command: |
+            python setup.py check --restructuredtext
