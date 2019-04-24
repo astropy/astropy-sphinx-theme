@@ -1,7 +1,7 @@
 1.1 (unreleased)
 ----------------
 
-- No changes yet.
+- Fixed compatibility with Sphinx 2.x. [#6]
 
 1.0 (2018-01-26)
 ----------------
