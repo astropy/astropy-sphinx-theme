@@ -1,8 +1,8 @@
-1.1 (unreleased)
+1.1 (2019-04-25)
 ----------------
 
 - Added a theme option ``astropy_project_menubar`` which can be used to control
-  whether to show extra project links in the top bar. [#4]
+  whether to show extra project links in the top bar. [#4, #8]
 
 - Fixed compatibility with Sphinx 2.x. [#6]
 
