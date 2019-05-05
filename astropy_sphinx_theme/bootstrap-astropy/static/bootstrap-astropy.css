@@ -222,7 +222,7 @@ div.topbar {
   left: 0;
   right: 0;
   z-index: 10000;
-  padding: 0px 13px;
+  padding: 0px 15px;
   background-color: #222;
   background-color: #222222;
   background-repeat: repeat-x;
@@ -272,7 +272,7 @@ div.topbar .brand:hover, div.topbar ul li a.homelink:hover {
 }
 
 div.topbar ul {
-    font-size: 110%;
+    font-size: 120%;
     list-style-type: none;
     margin: 0;
     padding: 0 0 0 10px;
