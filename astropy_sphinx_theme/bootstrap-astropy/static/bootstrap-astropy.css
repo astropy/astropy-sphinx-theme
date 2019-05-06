@@ -272,7 +272,7 @@ div.topbar .brand:hover, div.topbar ul li a.homelink:hover {
 }
 
 div.topbar ul {
-    font-size: 120%;
+    font-size: 16px;
     list-style-type: none;
     margin: 0;
     padding: 0 0 0 10px;
@@ -287,7 +287,7 @@ div.topbar ul li {
     display: inline-block;
     height: 30px;
     margin: 5px;
-    padding: 0px;
+    padding: 5px;
 }
 
 div.topbar ul li a {
@@ -314,6 +314,7 @@ div.dropdown {
 
 div.dropdown-content {
     display: none; /* Fix this at none */
+    font-size: 13px;
     background-color: DimGray;
     color: White;
     width: 235px;
