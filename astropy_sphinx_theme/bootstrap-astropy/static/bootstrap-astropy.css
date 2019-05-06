@@ -218,11 +218,15 @@ table.docutils {
 div.topbar {
   height: 40px;
   position: absolute;
+  vertical-align: middle;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10000;
-  padding: 0px 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 0;
+  padding-bottom: 5px;
   background-color: #222;
   background-color: #222222;
   background-repeat: repeat-x;
