@@ -1,3 +1,10 @@
-<h3>Table of Contents</h3>
-{{ toctree(maxdepth=-1, titles_only=true) }}
-
+<li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="{{ pathto(master_doc) }}">{{ theme_navbar_site_name }} <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc">{{ toctree(maxdepth=theme_globaltoc_depth|toint, collapse=False, includehidden=theme_globaltoc_includehidden|tobool) }}</ul>
+</li>
