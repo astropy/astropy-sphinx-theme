@@ -255,6 +255,18 @@ div.topbar a.brand {
   background-size: 32px 32px;
 }
 
+div.topbar a.home {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  float: right;
+  display: block;
+  height: 32px;
+  padding: 4px 12px 0px 12px;
+}
+
 #logotext1 {
 }
 
@@ -267,6 +279,11 @@ div.topbar a.brand {
 }
 
 div.topbar .brand:hover, div.topbar ul li a.homelink:hover {
+  background-color: #333;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+div.topbar .home:hover, div.topbar ul li a.homelink:hover {
   background-color: #333;
   background-color: rgba(255, 255, 255, 0.05);
 }
