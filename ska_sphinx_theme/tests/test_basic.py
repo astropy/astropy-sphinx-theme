@@ -10,7 +10,7 @@ if SPHINX_LT_17:
 else:
     from sphinx.cmd.build import build_main
 
-THEMES = ['bootstrap-astropy']
+THEMES = ['bootstrap-ska']
 
 
 BASIC_CONF = """
