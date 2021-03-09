@@ -13,7 +13,7 @@
 
 {% block header %}
 <div class="topbar">
-  <a class="brand" title="{{ _('Documentation Home') }}" href="{{ pathto(main_doc) }}"><span id="logotext1">{{ theme_logotext1 }}</span><span id="logotext2">{{ theme_logotext2 }}</span><span id="logotext3">{{ theme_logotext3 }}</span></a>
+  <a class="brand" title="{{ _('Documentation Home') }}" href="{{ pathto(master_doc) }}"><span id="logotext1">{{ theme_logotext1 }}</span><span id="logotext2">{{ theme_logotext2 }}</span><span id="logotext3">{{ theme_logotext3 }}</span></a>
   <ul>
     {% if theme_astropy_project_menubar == true %}
     <li>
@@ -66,7 +66,7 @@
       {%- endif %}
       {%- block rootrellink %}
       <li>
-	<a href="{{ pathto(main_doc) }}">{{ shorttitle|e }}</a>
+	<a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a>
 	{{ reldelim1 }}
       </li>
       {%- endblock %}
