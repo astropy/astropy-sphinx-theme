@@ -15,7 +15,7 @@ THEMES = ['bootstrap-astropy']
 
 BASIC_CONF = """
 source_suffix = '.rst'
-master_doc = 'index'
+main_doc = 'index'
 html_theme = '{theme}'
 """
 

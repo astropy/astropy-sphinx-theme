@@ -38,5 +38,5 @@ the ``astropy_project_menubar`` option can be set to ``True`` for packages
 that are managed by the project itself (this will add links to find out more
 about the Astropy project, about the team, and so on).
 
-.. image:: https://circleci.com/gh/astropy/astropy-sphinx-theme/tree/master.svg?style=svg
-    :target: https://circleci.com/gh/astropy/astropy-sphinx-theme/tree/master
+.. image:: https://circleci.com/gh/astropy/astropy-sphinx-theme/tree/main.svg?style=svg
+    :target: https://circleci.com/gh/astropy/astropy-sphinx-theme/tree/main
