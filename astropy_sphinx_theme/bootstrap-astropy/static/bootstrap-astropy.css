@@ -487,6 +487,7 @@ div.sphinxsidebar {
 
 div.sphinxsidebarwrapper {
     padding: 0px 0px 0px 5px;
+    position: relative;
 }
 
 div.sphinxsidebar h3 {
