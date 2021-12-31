@@ -1,8 +1,6 @@
 """ Astropy Sphinx Theme """
 import os
 
-__version__ = "1.2.dev0"
-
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
