@@ -1,9 +1,9 @@
-from distutils.version import LooseVersion
+from packaging.version import Version
 
 import pytest
 from sphinx import __version__
 
-SPHINX_LT_17 = LooseVersion(__version__) < LooseVersion('1.7')
+SPHINX_LT_17 = Version(__version__) < Version('1.7')
 
 if SPHINX_LT_17:
     from sphinx import build_main
