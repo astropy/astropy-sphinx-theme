@@ -250,8 +250,8 @@ div.topbar a.brand {
   height: 32px;
   padding: 8px 12px 0px 45px;
   margin-left: -10px;
-  background: transparent url("https://docs.stingray.science/_images/stingray_logo.png") no-repeat 10px 4px;
-  background-image: url("https://docs.stingray.science/_images/stingray_logo.png"), none;
+  background: transparent url("Stingray_logo.png") no-repeat 10px 4px;
+  background-image: url("Stingray_logo.png"), none;
   background-size: 32px 32px;
 }
 
