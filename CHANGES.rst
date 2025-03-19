@@ -1,7 +1,9 @@
-2.0 (unreleased)
+2.0 (2025-03-18)
 ----------------
 
 - Infrastructure updates. Minimum Python version is now 3.7. [#27]
+
+- Fixed overflowing navbar. [#40]
 
 1.1 (2019-04-25)
 ----------------
