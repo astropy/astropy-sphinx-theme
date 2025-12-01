@@ -487,6 +487,10 @@ div.sphinxsidebar {
 
 div.sphinxsidebarwrapper {
     padding: 0px 0px 0px 5px;
+    position: sticky;
+    height: calc(100vh - 1em);
+    overflow-y: auto;
+    top: 0;
 }
 
 div.sphinxsidebar h3 {
