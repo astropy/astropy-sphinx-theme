@@ -10,7 +10,9 @@ def get_html_theme_path():
 
 
 def update_config(app) -> None:
-    # Set the logo to the astropy logo unless it's overridden in the user config
+    # Here we default some config options (i.e. things in conf.py) unless they are set by the user
+    # Theme options are defaulted in theme.toml
+
     if not utils.config_provided_by_user(app, "html_logo"):
         app.config.html_logo = str(get_html_theme_path() / "static" / "img" / "astropy_logo_notext.svg")
 
