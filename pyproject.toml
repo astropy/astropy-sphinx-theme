@@ -63,6 +63,7 @@ ignore = [
   "PY007",  # No tox
   "PY005",  # I will put my test folder where I like, thank you.
   "PP",  # using new pytest config
+  "PC111",  # I shall have not-black docs
   # TODO: Add docs
   "PY004",
   "RTD",

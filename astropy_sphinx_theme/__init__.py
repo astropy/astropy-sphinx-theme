@@ -1,4 +1,5 @@
-""" Astropy Sphinx Theme """
+"""Astropy Sphinx Theme"""
+
 import os
 
 
@@ -10,6 +11,6 @@ def get_html_theme_path():
 
 def setup(app):
     app.add_html_theme(
-        'bootstrap-astropy',
-        os.path.abspath(os.path.join(os.path.dirname(__file__), 'bootstrap-astropy'))
+        "bootstrap-astropy",
+        os.path.abspath(os.path.join(os.path.dirname(__file__), "bootstrap-astropy")),
     )
