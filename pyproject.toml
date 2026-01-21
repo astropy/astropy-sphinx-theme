@@ -22,6 +22,17 @@ urls = {Homepage = "https://github.com/astropy/astropy-sphinx-theme"}
 requires-python = ">=3.11"
 dependencies = ["sphinx>6"]
 
+[dependency-groups]
+dev = [ { include-group = "test" } ]
+test = [
+  "pytest>=9",
+  "packaging",
+]
+docs = [
+  "sphinx",
+]
+
+# Keeping this around for backwards compat
 [project.optional-dependencies]
 test = [
   "packaging",
@@ -44,6 +55,12 @@ include = ["astropy_sphinx_theme*"]
 minversion = "9.0"
 testpaths = ["astropy_sphinx_theme"]
 xfail_strict = true
+log_level = "INFO"
+addopts = [
+  "-ra",
+  "--strict-config",
+  "--strict-markers",
+]
 filterwarnings = ["error"]
 
 [tool.ruff]
@@ -64,7 +81,6 @@ ignore = [
   "PC140",  # No typing
   "PY007",  # No tox
   "PY005",  # I will put my test folder where I like, thank you.
-  "PP",  # using new pytest config
   "PC111",  # I shall have not-black docs
   # TODO: Add docs
   "RTD",

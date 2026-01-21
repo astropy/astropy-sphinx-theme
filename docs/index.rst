@@ -10,4 +10,3 @@ This package provides the ``bootstrap-astropy`` theme.
    :caption: Contents:
 
    colors
-
