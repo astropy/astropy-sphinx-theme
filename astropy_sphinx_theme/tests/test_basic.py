@@ -1,6 +1,5 @@
-from packaging.version import Version
-
 import pytest
+from packaging.version import Version
 from sphinx import __version__
 
 SPHINX_LT_17 = Version(__version__) < Version('1.7')

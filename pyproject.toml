@@ -1,5 +1,70 @@
 [build-system]
-requires = ["setuptools>=30.3.0",
-            "setuptools_scm",
-            "wheel"]
+requires = [
+    "setuptools>=30.3.0",
+    "setuptools_scm"
+]
 build-backend = 'setuptools.build_meta'
+
+[project]
+name = "astropy-sphinx-theme"
+dynamic = ["version"]
+description = "The sphinx theme for Astropy and affiliated packages."
+readme = "README.rst"
+license = {text = "BSD"}
+authors = [{name = "The Astropy Developers", email = "astropy.team@gmail.com"}]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+]
+urls = {Homepage = "https://github.com/astropy/astropy-sphinx-theme"}
+requires-python = ">=3.11"
+dependencies = ["sphinx>6"]
+
+[project.optional-dependencies]
+test = [
+  "packaging",
+  "pytest>=9",
+]
+
+[tool.setuptools]
+zip_safe = false
+packages = ["find:"]
+
+[tool.setuptools.package-data]
+"*" = ["bootstrap-astropy/*", "bootstrap-astropy/static/*"]
+
+[tool.setuptools.entry-points]
+"sphinx.html_themes" = { "bootstrap-astropy" = "astropy_sphinx_theme" }
+
+[tool.pytest]
+minversion = "9.0"
+testpaths = ["astropy_sphinx_theme"]
+xfail_strict = true
+filterwarnings = ["error"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "E",
+  "F",
+  "I",
+  "B",
+  "UP",
+]
+
+[tool.repo-review]
+ignore = [
+  "MY",  # No typing
+  "PC140",  # No typing
+  "PY007",  # No tox
+  "PY005",  # I will put my test folder where I like, thank you.
+  "PP",  # using new pytest config
+  # TODO: Add docs
+  "PY004",
+  "RTD",
+
+]
