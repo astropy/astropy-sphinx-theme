@@ -7,6 +7,5 @@ This package provides the ``bootstrap-astropy`` theme.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    colors
