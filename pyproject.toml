@@ -25,21 +25,21 @@ dependencies = ["sphinx>6"]
 [dependency-groups]
 dev = [ { include-group = "test" } ]
 test = [
-  "pytest>=9",
-  "packaging",
+    "pytest>=9",
+    "packaging",
 ]
 docs = [
-  "sphinx",
+    "sphinx",
 ]
 
 # Keeping this around for backwards compat
 [project.optional-dependencies]
 test = [
-  "packaging",
-  "pytest>=9",
+    "packaging",
+    "pytest>=9",
 ]
 docs = [
-  "sphinx",
+    "sphinx",
 ]
 
 [project.entry-points]
@@ -57,9 +57,9 @@ testpaths = ["astropy_sphinx_theme"]
 xfail_strict = true
 log_level = "INFO"
 addopts = [
-  "-ra",
-  "--strict-config",
-  "--strict-markers",
+    "-ra",
+    "--strict-config",
+    "--strict-markers",
 ]
 filterwarnings = ["error"]
 
@@ -68,20 +68,20 @@ line-length = 100
 
 [tool.ruff.lint]
 select = [
-  "E",
-  "F",
-  "I",
-  "B",
-  "UP",
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
 ]
 
 [tool.repo-review]
 ignore = [
-  "MY",  # No typing
-  "PC140",  # No typing
-  "PY007",  # No tox
-  "PY005",  # I will put my test folder where I like, thank you.
-  "PC111",  # I shall have not-black docs
-  # TODO: Add docs
-  "RTD",
+    "MY",  # No typing
+    "PC140",  # No typing
+    "PY007",  # No tox
+    "PY005",  # I will put my test folder where I like, thank you.
+    "PC111",  # I shall have not-black docs
+    # TODO: Add docs
+    "RTD",
 ]
