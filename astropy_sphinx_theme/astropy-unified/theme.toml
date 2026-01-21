@@ -3,7 +3,9 @@ inherit = "sunpy"
 
 [options]
 sst_project_name = "Astropy"
-sst_site_root = "https://astropy.org"
+# We use the RTD build preview of the new website here so the top nav works
+# sst_site_root = "https://astropy.org"
+sst_site_root = "https://astropy-org-test.readthedocs.io"
 navbar_links = [
     ["About",
         [
