@@ -27,6 +27,9 @@ test = [
   "packaging",
   "pytest>=9",
 ]
+docs = [
+  "sphinx",
+]
 
 [project.entry-points]
 "sphinx.html_themes" = { "bootstrap-astropy" = "astropy_sphinx_theme" }
@@ -64,7 +67,5 @@ ignore = [
   "PP",  # using new pytest config
   "PC111",  # I shall have not-black docs
   # TODO: Add docs
-  "PY004",
   "RTD",
-
 ]
