@@ -35,3 +35,4 @@ navbar_links = [
     ["Team", "team.html", 2],
 ]
 rtd_extra_search_projects = [["astropy-org-test", "https://astropy-org-test.readthedocs.io"]]
+footer_links = [["Code of Conduct", "code_of_conduct.html", 2]]
