@@ -1,7 +1,7 @@
 [build-system]
 requires = [
-    "setuptools>=30.3.0",
-    "setuptools_scm"
+    "setuptools>=80",
+    "setuptools_scm[simple]>=8"
 ]
 build-backend = 'setuptools.build_meta'
 
@@ -10,11 +10,11 @@ name = "astropy-sphinx-theme"
 dynamic = ["version"]
 description = "The sphinx theme for Astropy and affiliated packages."
 readme = "README.rst"
-license = {text = "BSD"}
+license = "BSD-3-Clause"
+license-files = ["LICENSE.rst"]
 authors = [{name = "The Astropy Developers", email = "astropy.team@gmail.com"}]
 classifiers = [
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
 ]
@@ -28,15 +28,14 @@ test = [
   "pytest>=9",
 ]
 
-[tool.setuptools]
-zip_safe = false
-packages = ["find:"]
+[project.entry-points]
+"sphinx.html_themes" = { "bootstrap-astropy" = "astropy_sphinx_theme" }
+
+[tool.setuptools.packages.find]
+include = ["astropy_sphinx_theme*"]
 
 [tool.setuptools.package-data]
 "*" = ["bootstrap-astropy/*", "bootstrap-astropy/static/*"]
-
-[tool.setuptools.entry-points]
-"sphinx.html_themes" = { "bootstrap-astropy" = "astropy_sphinx_theme" }
 
 [tool.pytest]
 minversion = "9.0"
