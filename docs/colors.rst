@@ -1,4 +1,4 @@
-.. COPY FROM PYDATA THEME DOCS
+.. COPY FROM PYDATA THEME DOCS (https://github.com/pydata/pydata-sphinx-theme under BSD-3-Clause)
 
 Colors
 ******
