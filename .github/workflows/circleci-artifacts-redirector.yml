@@ -1,16 +1,21 @@
 name: Run CircleCI artifacts redirector for rendered HTML
 on: [status]
+
+permissions: read-all
+
 jobs:
-   circleci_artifacts_redirector_job:
-     if: ${{ github.repository == 'astropy/astropy-sphinx-theme' }}
-     runs-on: ubuntu-latest
-     name: Run CircleCI artifacts redirector
-     steps:
-       - name: GitHub Action step
-         uses: scientific-python/circleci-artifacts-redirector-action@5d358ff96e96429a5c64a969bb4a574555439f4f  # v1.3.1
-         with:
-           repo-token: ${{ secrets.GITHUB_TOKEN }}
-           api-token: ${{ secrets.ASTROPY_SPHINX_CIRCLE_TOKEN }}
-           artifact-path: 0/docs/_build/html/index.html
-           circleci-jobs: build-docs
-           job-title: "--> Rendering Preview <--"
+  circleci_artifacts_redirector_job:
+    if: "${(github.repository == 'astropy/astropy-sphinx-theme') && (github.event.context == 'ci/circleci: build-preview')}"
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+    name: Run CircleCI artifacts redirector
+    steps:
+      - name: GitHub Action step
+        uses: scientific-python/circleci-artifacts-redirector-action@5d358ff96e96429a5c64a969bb4a574555439f4f # v1.3.1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          api-token: ${{ secrets.ASTROPY_SPHINX_CIRCLE_TOKEN }}
+          artifact-path: 0/docs/_build/html/index.html
+          circleci-jobs: build-docs
+          job-title: "--> Rendering Preview <--"

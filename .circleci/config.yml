@@ -23,7 +23,6 @@ jobs:
           path: /home/circleci/project/docs/_build/html
           destination: html
 
-
 workflows:
   version: 2
 
