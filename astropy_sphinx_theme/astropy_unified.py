@@ -14,7 +14,9 @@ def update_config(app) -> None:
     # Theme options are defaulted in theme.toml
 
     if not utils.config_provided_by_user(app, "html_logo"):
-        app.config.html_logo = str(get_html_theme_path() / "static" / "img" / "astropy_logo_notext.svg")
+        app.config.html_logo = str(
+            get_html_theme_path() / "static" / "img" / "astropy_logo_notext.svg"
+        )
 
     if not utils.config_provided_by_user(app, "html_favicon"):
         app.config.html_favicon = str(get_html_theme_path() / "static" / "img" / "favicon.ico")
