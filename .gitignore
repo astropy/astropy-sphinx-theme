@@ -4,3 +4,4 @@ build
 *.pyc
 *~
 astropy_sphinx_theme/version.py
+docs/_build/

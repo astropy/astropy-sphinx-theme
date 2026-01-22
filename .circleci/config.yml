@@ -1,0 +1,31 @@
+# Python CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2.1
+jobs:
+  build-preview:
+    docker:
+      - image: cimg/python:3.14
+    steps:
+      - checkout
+      - run:
+          name: Install sphinx deps
+          command: |
+            python -m pip install ".[docs]"
+
+      - run:
+          name: Build sphinx
+          command: |
+            sphinx-build --color -W --keep-going -b html docs/ docs/_build/html
+
+      - store_artifacts:
+          path: /home/circleci/project/docs/_build/html
+          destination: html
+
+workflows:
+  version: 2
+
+  theme-previews:
+    jobs:
+      - build-preview
