@@ -20,7 +20,10 @@ classifiers = [
 ]
 urls = {Homepage = "https://github.com/astropy/astropy-sphinx-theme"}
 requires-python = ">=3.10"
-dependencies = ["sphinx>6"]
+dependencies = [
+    "sphinx>6",
+    "sunpy-sphinx-theme@git+https://github.com/sunpy/sunpy-sphinx-theme",
+]
 
 [dependency-groups]
 dev = [ { include-group = "test" } ]
@@ -42,14 +45,12 @@ docs = [
     "sphinx",
 ]
 
-[project.entry-points]
-"sphinx.html_themes" = { "bootstrap-astropy" = "astropy_sphinx_theme" }
+[project.entry-points."sphinx.html_themes"]
+"bootstrap-astropy" = "astropy_sphinx_theme.bootstrap_astropy"
+"astropy-unified" = "astropy_sphinx_theme.astropy_unified"
 
 [tool.setuptools.packages.find]
 include = ["astropy_sphinx_theme*"]
-
-[tool.setuptools.package-data]
-"*" = ["bootstrap-astropy/*", "bootstrap-astropy/static/*"]
 
 [tool.pytest]
 minversion = "9.0"

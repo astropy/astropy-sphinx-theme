@@ -1,0 +1,38 @@
+[theme]
+inherit = "sunpy"
+
+[options]
+sst_project_name = "Astropy"
+# We use the RTD build preview of the new website here so the top nav works
+# sst_site_root = "https://astropy.org"
+sst_site_root = "https://astropy-org-test.readthedocs.io"
+navbar_links = [
+    ["About",
+        [
+            ["About Astropy", "about.html", 2],
+            ["Code of Conduct", "code_of_conduct.html", 2],
+            ["Acknowledging & Citing", "acknowledging.html", 2],
+            ["History", "history.html", 2],
+        ]
+    ],
+    ["Documentation",
+        [
+            ["astropy", "https://docs.astropy.org", 3],
+            ["asdf-astropy", "https://asdf-astropy.readthedocs.io", 3],
+            ["astropy-healpix", "https://astropy-healpix.readthedocs.io", 3],
+            ["astroquery", "https://astroquery.readthedocs.io", 3],
+            ["ccdproc", "https://ccdproc.readthedocs.io", 3],
+            ["photutils", "https://photutils.readthedocs.io", 3],
+            ["regions", "https://astropy-regions.readthedocs.io", 3],
+            ["reproject", "https://reproject.readthedocs.io", 3],
+            ["specreduce", "https://specreduce.readthedocs.io", 3],
+            ["specutils", "https://specutils.readthedocs.io", 3],
+        ]
+    ],
+    ["Get Help", "help.html", 2],
+    ["Contribute", "contribute.html", 2],
+    ["Affiliated Packages", "affiliated/index.html", 2],
+    ["Team", "team.html", 2],
+]
+rtd_extra_search_projects = [["astropy-org-test", "https://astropy-org-test.readthedocs.io"]]
+footer_links = [["Code of Conduct", "code_of_conduct.html", 2]]

@@ -1,16 +1,13 @@
-"""Astropy Sphinx Theme"""
+import warnings
 
-import os
+from .bootstrap_astropy import get_html_theme_path as _old_theme_path
 
 
 def get_html_theme_path():
-    """Return list of HTML theme paths."""
-    cur_dir = os.path.abspath(os.path.dirname(__file__))
-    return [cur_dir]
-
-
-def setup(app):
-    app.add_html_theme(
-        "bootstrap-astropy",
-        os.path.abspath(os.path.join(os.path.dirname(__file__), "bootstrap-astropy")),
+    warnings.warn(
+        "astropy_sphinx_theme.get_html_theme_path is deprecated, you shouldn't"
+        " need to manually specify the theme path as the theme is registered with sphinx",
+        DeprecationWarning,
+        stacklevel=2,
     )
+    return _old_theme_path()
