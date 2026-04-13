@@ -5,7 +5,7 @@ permissions: read-all
 
 jobs:
   circleci_artifacts_redirector_job:
-    if: "${(github.repository == 'astropy/astropy-sphinx-theme') && (github.event.context == 'ci/circleci: build-preview')}"
+    if: "${(github.repository == 'astropy/astropy-sphinx-theme') && startswith(github.event.context, 'ci/circleci'))}"
     runs-on: ubuntu-latest
     permissions:
       statuses: write
@@ -17,5 +17,5 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           api-token: ${{ secrets.ASTROPY_SPHINX_CIRCLE_TOKEN }}
           artifact-path: 0/docs/_build/html/index.html
-          circleci-jobs: build-docs
+          circleci-jobs: bootstrap-astropy,astropy-unified
           job-title: "--> Rendering Preview <--"
