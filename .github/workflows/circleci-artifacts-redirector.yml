@@ -15,7 +15,7 @@ jobs:
         uses: scientific-python/circleci-artifacts-redirector-action@5d358ff96e96429a5c64a969bb4a574555439f4f # v1.3.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          api-token: ${{ secrets.ASTROPY_SPHINX_CIRCLE_TOKEN }}
+          api-token: ${{ secrets.ASTROPY_SPHINX_CIRCLE_TOKEN }} # zizmor: ignore[secrets-outside-env]
           artifact-path: 0/docs/_build/html/index.html
           circleci-jobs: bootstrap-astropy,astropy-unified
           job-title: "--> Rendering Preview <--"
