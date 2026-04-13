@@ -3,56 +3,38 @@ name: Release
 on:
   pull_request:
   push:
+    branches:
+      - main
     tags:
-      - "*"
+      - "v*"
+  workflow_dispatch:
 
 permissions: {}
 
 jobs:
   build:
-    name: Build and publish Python 🐍 distributions 📦 to PyPI
-    runs-on: ubuntu-latest
-    if: ((github.event_name == 'push' && startsWith(github.ref, 'refs/tags')) || contains(github.event.pull_request.labels.*.name, 'Build wheels'))
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/publish_pure_python.yml@e97344095b099e1d729fe97429078c9975921d8a # v2
+    with:
+      save_artifacts: true
+      upload_to_pypi: false
+      test_extras: test
+      test_command: pytest --pyargs astropy_sphinx_theme
 
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
-        with:
-          python-version: 3.11
-
-      - name: Install python-build and twine
-        run: python -m pip install build "twine>=3.3"
-
-      - name: Build package
-        run: python -m build --sdist --wheel .
-
-      - name: List result
-        run: ls -l dist
-
-      - name: Check long_description
-        run: python -m twine check --strict dist/*
-
-      - name: Test package
-        run: |
-          cd ..
-          python -m venv testenv
-          testenv/bin/pip install pytest sphinx astropy-sphinx-theme/dist/*.whl
-          testenv/bin/pytest astropy-sphinx-theme/astropy_sphinx_theme/tests
-
-  pypi-publish:
-    if: startsWith(github.ref, 'refs/tags')
-    needs: [build]
+  upload:
+    if: startsWith(github.ref, 'refs/tags/v')
     name: Upload release to PyPI
     runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/p/astropy-sphinx-theme
+    needs: [build]
+    environment: pypi
     permissions:
       id-token: write
     steps:
-      - name: Publish distribution 📦 to PyPI
-        if: startsWith(github.ref, 'refs/tags')
+      - name: Download artifacts
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          merge-multiple: true
+          pattern: dist-*
+          path: dist
+
+      - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0
