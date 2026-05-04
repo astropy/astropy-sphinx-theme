@@ -5,7 +5,7 @@ permissions: read-all
 
 jobs:
   circleci_artifacts_redirector_job:
-    if: ${{ (github.repository == 'astropy/astropy-sphinx-theme') && startswith(github.event.context, 'ci/circleci')) }}
+    if: ${{ (github.repository == 'astropy/astropy-sphinx-theme') && startswith(github.event.context, 'ci/circleci') }}
     runs-on: ubuntu-latest
     permissions:
       statuses: write
