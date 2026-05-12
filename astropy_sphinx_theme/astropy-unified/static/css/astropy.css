@@ -9,3 +9,13 @@
   --sst-lighter-color: rgb(231, 231, 231);
   --sst-lightest-color: rgb(251, 251, 251);
 }
+
+html[data-theme="light"] {
+  --pst-color-link-hover: #8045e5;
+  --pst-color-link: #0a7d91;
+}
+
+html[data-theme="dark"] {
+  --pst-color-link-hover: #9c5ffd;
+  --pst-color-link: #3fb1c5;
+}
