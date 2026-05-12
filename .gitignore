@@ -5,3 +5,6 @@ build
 *~
 astropy_sphinx_theme/version.py
 docs/_build/
+build_preview
+.tox
+.tmp

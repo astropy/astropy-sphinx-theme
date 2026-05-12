@@ -16,6 +16,6 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           api-token: ${{ secrets.ASTROPY_SPHINX_CIRCLE_TOKEN }} # zizmor: ignore[secrets-outside-env]
-          artifact-path: 0/docs/_build/html/index.html
-          circleci-jobs: bootstrap-astropy,astropy-unified
+          artifact-path: 0/build_preview/_build/html/index.html
+          circleci-jobs: website,theme,theme-bootstrap,theme-devdeps,astropy
           job-title: "--> Rendering Preview <--"
