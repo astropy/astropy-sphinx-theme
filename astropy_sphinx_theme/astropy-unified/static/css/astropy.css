@@ -10,6 +10,7 @@
   --sst-lightest-color: rgb(251, 251, 251);
 }
 
+/* Override the sunpy sphinx theme link colors to pst defaults */
 html[data-theme="light"] {
   --pst-color-link-hover: #8045e5;
   --pst-color-link: #0a7d91;
@@ -18,4 +19,14 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --pst-color-link-hover: #9c5ffd;
   --pst-color-link: #3fb1c5;
+}
+
+.concertina-toggle.dropdown-item:hover,
+.navbar-nav .concertina-toggle:hover,
+.bd-header .dropdown-item:hover,
+.bd-header .concertina-toggle:hover {
+  /* Override the header link color back to sunpy */
+  color: var(--sst-accent-color-muted);
+  background-color: transparent;
+  text-decoration: underline;
 }
