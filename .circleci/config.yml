@@ -1,43 +1,87 @@
-# Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
 version: 2.1
-
+apt-run: &apt-install
+  name: Install apt packages
+  command: |
+    sudo apt update
+    sudo apt install -y graphviz build-essential libopenjp2-7 python3-dev pandoc libcairo2-dev
+tox: &tox
+  name: Setup tox
+  command: |
+    python -m pip install --upgrade tox
 jobs:
-  build-preview:
-    parameters:
-      themename:
-        type: string
-
+  website:
+    resource_class: large
     docker:
-      - image: cimg/python:3.14
-
+      - image: cimg/python:3.13
     steps:
       - checkout
-      - run:
-          name: Install sphinx deps
-          command: |
-            python -m pip install ".[docs]"
-
-      - run:
-          name: Build sphinx
-          command: |
-            sphinx-build --color -W --keep-going -b html docs/ docs/_build/html -D html_theme=<< parameters.themename >>
-
+      - run: *apt-install
+      - run: *tox
+      - run: python -m tox -e website -- -j 8
       - store_artifacts:
-          path: /home/circleci/project/docs/_build/html
-          destination: html
-
+          path: build_preview/_build/html
+  theme:
+    docker:
+      - image: cimg/python:3.13
+    steps:
+      - checkout
+      - run: *apt-install
+      - run: *tox
+      - run: python -m tox -e build_docs
+      - store_artifacts:
+          path: build_preview/_build/html
+  theme-bootstrap:
+    docker:
+      - image: cimg/python:3.13
+    steps:
+      - checkout
+      - run: *apt-install
+      - run: *tox
+      - run: python -m tox -e build_docs-bootstrap
+      - store_artifacts:
+          path: build_preview/_build/html
+  theme-devdeps:
+    docker:
+      - image: cimg/python:3.13
+    steps:
+      - checkout
+      - run: *apt-install
+      - run: *tox
+      - run: python -m tox -e build_docs-devdeps
+      - store_artifacts:
+          path: build_preview/_build/html
+  astropy:
+    resource_class: large
+    docker:
+      - image: cimg/python:3.13
+    steps:
+      - checkout
+      - run: *apt-install
+      - run: *tox
+      # the large resource_class has 4 CPUs but auto detection does not work
+      - run: python -m tox -e astropy_docs -- -j 8
+      # Remove some parts of the build to speed up upload
+      - run: rm -r build_preview/_build/html/.doctrees
+      - run: rm -r build_preview/_build/html/_downloads
+      - run: rm -r build_preview/_build/html/_sources
+      - store_artifacts:
+          path: build_preview/_build/html
+  css_linting:
+    resource_class: small
+    docker:
+      - image: cimg/node:current
+    steps:
+      - checkout
+      - run: sudo npm install -g stylelint
+      - run: sudo npm install stylelint-config-recommended
+      - run: sudo stylelint "astropy_sphinx_theme/astropy-unified/**/*.{css,scss,sass}"
 workflows:
   version: 2
-
-  theme-previews:
+  tests:
     jobs:
-      - build-preview:
-          name: << matrix.themename >>
-          matrix:
-            parameters:
-              themename:
-                - "bootstrap-astropy"
-                - "astropy-unified"
+      - website
+      - theme
+      - theme-bootstrap
+      - theme-devdeps
+      - astropy
+      - css_linting
