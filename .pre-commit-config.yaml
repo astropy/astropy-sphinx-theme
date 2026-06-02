@@ -55,12 +55,12 @@ repos:
         types_or: [css, scss, javascript, rst, json, yaml, toml, markdown]
 
   - repo: https://github.com/woodruffw/zizmor-pre-commit
-    rev: v1.24.1
+    rev: v1.25.2
     hooks:
       - id: zizmor
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.12
+    rev: v0.15.15
     hooks:
       - id: ruff-check
         args: ["--fix", "--show-fixes"]
