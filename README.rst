@@ -1,6 +1,10 @@
 Astropy Sphinx Theme(s)
 -----------------------
 
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.20229586.svg
+    :target: https://doi.org/10.5281/zenodo.20229586
+    :alt: Zenodo DOI
+
 This is the repository for the default Astropy project documentation
 theme(s). To use this theme, simply install this package then add the
 following line to your documentation's ``conf.py`` file:
