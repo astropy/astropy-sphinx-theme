@@ -1,0 +1,3 @@
+artifact-path: 0/build_preview/_build/html/index.html
+circleci-jobs: website,theme,theme-bootstrap,theme-devdeps,astropy
+job-title: "--> Rendering Preview <--"
