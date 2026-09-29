@@ -3,7 +3,7 @@
    ========================================================================= */
 
 :root {
-  --sst-accent-color-bright: #ff9a6c;
+  --sst-accent-color-bright: #ff5000;
   --sst-accent-color-muted: #ff9a6c;
 }
 
@@ -26,8 +26,8 @@ html[data-theme="light"] {
   --pst-color-secondary-highlight-text: #ffffff;
 
   --pst-color-inline-code: #912583;
-  --pst-color-inline-code-links: #2e6da4;
-  --pst-color-link-higher-contrast: #2e6da4;
+  --pst-color-inline-code-links: var(--pst-color-link);
+  --pst-color-link-higher-contrast: var(--pst-color-link);
 
   --pst-color-target: #f3cf95;
 
@@ -60,27 +60,39 @@ html[data-theme="dark"] {
 /* =========================================================================
    Header / Navigation
    ========================================================================= */
-
+/* Ensure header bar hover color doesn't use blue links*/
 .bd-header a.navbar-brand {
-  color: #ff8457 !important;
+  color: var(--sst-accent-color-muted);
+}
+
+.navbar-brand:hover,
+.navbar-brand:visited:hover {
+  color: var(--sst-accent-color-muted);
+}
+
+.bd-header ul.navbar-nav > li.nav-item.dropdown > .dropdown-toggle:hover {
+  color: var(--sst-accent-color-muted);
 }
 
 .bd-header ul.navbar-nav > li.nav-item > .nav-link:hover {
-  color: var(--sst-accent-color-bright) !important;
+  color: var(--sst-accent-color-muted);
 }
 
-.bd-header ul.navbar-nav > li.nav-item > .nav-link:hover:before {
-  border-bottom-color: var(--sst-accent-color-bright) !important;
+.concertina-toggle.dropdown-item:hover,
+.navbar-nav .concertina-toggle:hover,
+.bd-header .dropdown-item:hover,
+.bd-header .concertina-toggle:hover {
+  color: var(--sst-accent-color-muted);
 }
 
-/* Theme toggle and GitHub icon hover color */
-html .pst-navbar-icon:hover {
-  color: #ff9a6c !important;
+.dropdown-item.active,
+.dropdown-item:active {
+  color: var(--sst-accent-color-muted);
 }
 
 /* Selected theme in the light/dark mode dropdown */
 html[data-theme="light"] .theme-switch-button + .dropdown-menu {
-  --bs-dropdown-link-active-color: #5b9fd6;
+  --bs-dropdown-link-active-color: var(--pst-color-link);
 }
 
 /* Vertical sidebar/content separator */
@@ -112,7 +124,7 @@ html[data-theme="dark"] .bd-footer {
 
 /* Muted slate blue for general admonitions (note, important, etc.) */
 html[data-theme="dark"] .admonition {
-  border-color: #2e6da4;
+  border-color: var(--pst-color-link);
 }
 html[data-theme="dark"] .admonition > .admonition-title {
   background-color: #1c4378;
