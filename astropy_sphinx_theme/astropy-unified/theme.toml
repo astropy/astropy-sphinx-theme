@@ -18,6 +18,7 @@ navbar_links = [
         [
             ["astropy", "https://docs.astropy.org", 3],
             ["asdf-astropy", "https://asdf-astropy.readthedocs.io", 3],
+            ["astroplan", "https://astroplan.readthedocs.io", 3],
             ["astropy-healpix", "https://astropy-healpix.readthedocs.io", 3],
             ["astroquery", "https://astroquery.readthedocs.io", 3],
             ["ccdproc", "https://ccdproc.readthedocs.io", 3],
