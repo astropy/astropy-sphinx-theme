@@ -4,7 +4,7 @@ inherit = "sunpy"
 [options]
 sst_project_name = "Astropy"
 sst_site_root = "https://astropy.org"
-goatcounter_analytics_url = "https://astropy.goatcounter.org/count"
+goatcounter_analytics_url = "https://astropy.goatcounter.com/count"
 navbar_links = [
     ["About",
         [
