@@ -12,6 +12,7 @@ navbar_links = [
             ["Code of Conduct", "code_of_conduct.html", 2],
             ["Acknowledging & Citing", "acknowledging.html", 2],
             ["History", "history.html", 2],
+            ["Roadmap", "https://astropy-roadmap.readthedocs.io", 3],
         ]
     ],
     ["Documentation",
