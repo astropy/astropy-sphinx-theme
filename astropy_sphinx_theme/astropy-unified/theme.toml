@@ -31,6 +31,7 @@ navbar_links = [
     ["Get Help", "help.html", 2],
     ["Contribute", "contribute.html", 2],
     ["Affiliated Packages", "affiliated/index.html", 2],
+    ["Roadmap", "https://astropy-roadmap.readthedocs.io", 3],
     ["Team", "team.html", 2],
 ]
 # Uncomment this when astropy.org migrates to RTD
