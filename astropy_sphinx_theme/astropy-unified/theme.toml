@@ -5,6 +5,7 @@ inherit = "sunpy"
 sst_project_name = "Astropy"
 sst_site_root = "https://astropy.org"
 goatcounter_analytics_url = "https://astropy.goatcounter.com/count"
+pygments_dark_style = "nord"
 navbar_links = [
     ["About",
         [
